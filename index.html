@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VIP Content</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --background: oklch(16% .02 48);
+      --font-body: "Jost", "Helvetica Neue", sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { min-height: 100%; background: var(--background); font-family: var(--font-body); }
+    main { position: relative; min-height: 100vh; overflow: hidden; }
+    .hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .overlay {
+      position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(oklch(20% .03 48 / .3) 0%, oklch(18% .025 48 / .16) 40%, oklch(12% .02 48 / .48) 100%);
+    }
+    .content {
+      position: relative; z-index: 1; display: flex; min-height: 100vh;
+      flex-direction: column; align-items: center; justify-content: center; padding: 0 1.5rem;
+    }
+    .stack { display: flex; flex-direction: column; align-items: center; transform: translateY(-2rem); }
+    .arrows { display: flex; gap: 1.25rem; }
+    .arrow-glow {
+      color: oklch(97% .02 30);
+      filter: drop-shadow(0 0 6px oklch(78% .09 30 / .85)) drop-shadow(0 0 16px oklch(72% .11 25 / .55));
+      animation: arrow-bounce 2s ease-in-out infinite;
+    }
+    @keyframes arrow-bounce {
+      0%, 100% { opacity: .85; transform: translateY(0); }
+      50% { opacity: 1; transform: translateY(8px); }
+    }
+    .btn-pill {
+      display: inline-flex; align-items: center; justify-content: center;
+      margin-top: 1.75rem; padding: 1.25rem 4rem;
+      color: oklch(99% 0 0); font-size: .85rem; font-weight: 500;
+      letter-spacing: .18em; text-transform: uppercase; text-decoration: none;
+      background: oklch(100% 0 0 / .18);
+      border: 1.5px solid oklch(100% 0 0 / .55);
+      border-radius: 9999px;
+      backdrop-filter: blur(14px) saturate(125%);
+      box-shadow: inset 0 1px oklch(100% 0 0 / .35), 0 4px 18px oklch(0% 0 0 / .25);
+      transition: transform .35s, box-shadow .35s, background .35s, border-color .35s;
+    }
+    .btn-pill:hover {
+      background: oklch(100% 0 0 / .26);
+      border-color: oklch(100% 0 0 / .75);
+      transform: translateY(-2px) scale(1.02);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <img class="hero-photo"
+      src="Image/IMG_9270.JPG"
+      alt="" width="1080" height="1350" />
+    <div class="overlay"></div>
+    <div class="content">
+      <div class="stack">
+        <div class="arrows">
+          <!-- 5 chevron SVGs with animation-delay 0s, .12s, .24s, .36s, .48s -->
+        </div>
+        <a class="btn-pill" href="https://onlyfans.com/bignvip" target="_blank" rel="noopener noreferrer">
+          View More
+        </a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
